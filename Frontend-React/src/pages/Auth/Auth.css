@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins","san-serif";
+}
+/* https://cdn.pixabay.com/photo/2022/12/26/11/37/bitcoin-7678812_1280.jpg */
+.authContainer{
+  background-image:url("https://as2.ftcdn.net/v2/jpg/05/71/15/59/1000_F_571155945_Aq3wgA5feiCK1I8T3ltpA03ecbx1yJ6K.jpg");
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  
+}
+.bgBlure{
+  backdrop-filter: blur(4px);
+}
+
+
+
+
+  
+ 
+     
