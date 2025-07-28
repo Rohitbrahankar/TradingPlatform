@@ -1,6 +1,7 @@
 package com.treding_backend.config;
 
 
+import com.treding_backend.Assets.Constants;
 import com.treding_backend.model.User;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -90,7 +91,7 @@ public class AppConfig {
 	                    "http://localhost:5173",
 						"http://localhost:5174",
 	                    "http://localhost:4200",
-							"https://zosh-treading.vercel.app"
+							Constants.FrontendURL
 	                ));
 	                cfg.setAllowedMethods(Collections.singletonList("*"));
 	                cfg.setAllowCredentials(true);
