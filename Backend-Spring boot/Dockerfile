@@ -27,7 +27,7 @@
 #
 #
 ## ---- STAGE 1: Build ----
-#FROM maven:3.9.4-openjdk-17 AS build
+#FROM maven:3.9.4-openjdk-22 AS build
 #
 ## Set working directory inside the container
 #WORKDIR /app
@@ -72,7 +72,7 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 # ---- STAGE 2: Runtime ----
-FROM eclipse-temurin:17-jdk-alpine AS runtime
+FROM eclipse-temurin:22-jdk-alpine AS runtime
 
 WORKDIR /app
 
