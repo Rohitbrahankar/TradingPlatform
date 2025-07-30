@@ -27,7 +27,7 @@
 
 
 # ---- STAGE 1: Build ----
-FROM maven:3.9.4-eclipse-temurin-17 AS build
+FROM maven:3.9.4-openjdk-17 AS build
 
 # Set working directory inside the container
 WORKDIR /app
@@ -37,16 +37,16 @@ COPY pom.xml .
 RUN mvn dependency:go-offline
 
 # Copy the rest of the project and build
-COPY . .
+COPY src  ./src
 RUN mvn clean package -DskipTests
 
 # ---- STAGE 2: Runtime ----
-FROM eclipse-temurin:17-jdk-slim AS runtime
+FROM openjdk:22-jdk-slim AS runtime
 
 WORKDIR /app
 
 # Copy the JAR built in the first stage
-COPY --from=build /app/target/*.jar app.jar
+COPY --from=build /app/target/treading-plateform-0.0.1-SNAPSHOT.jar .
 
 # Optional: Reduce size further by cleaning up (if anything copied or temp dirs exist)
 
@@ -57,4 +57,4 @@ EXPOSE 8080
 ENV FRONTEND_URL=http://localhost:3000
 
 # Run the JAR
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "treading-plateform-0.0.1-SNAPSHOT.jar"]
