@@ -230,7 +230,7 @@ public class AppConfig {
 		CorsConfiguration configuration = new CorsConfiguration();
 		configuration.setAllowedOrigins(Arrays.asList(
 				"http://localhost:5173",
-				"https://tradingplatform-ct4o.onrender.com"
+				"https://tradingplatform-frontend.onrender.com"
 		));
 		configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
 		configuration.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type"));
