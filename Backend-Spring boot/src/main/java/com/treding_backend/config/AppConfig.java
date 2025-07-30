@@ -31,12 +31,22 @@ public class AppConfig {
 	    SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
 	        http.sessionManagement(management -> management.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-	                .authorizeHttpRequests(Authorize -> Authorize
-//	                		.requestMatchers("/api/admin/**").hasRole("ADMIN")
-	                                .requestMatchers("/api/**").authenticated()
+// 	                .authorizeHttpRequests(Authorize -> Authorize
+// //	                		.requestMatchers("/api/admin/**").hasRole("ADMIN")
+// 	                                .requestMatchers("/api/**").authenticated()
 	                                
-	                                .anyRequest().permitAll()
-	                )
+// 	                                .anyRequest().permitAll()
+// 	                )
+
+
+                .authorizeHttpRequests(auth -> auth
+							.requestMatchers(HttpMethod.OPTIONS, "/**").permitAll() // 🟢 IMPORTANT!
+							.requestMatchers("/api/**").authenticated()
+							.anyRequest().permitAll()
+					)
+
+
+			
 					.oauth2Login(oauth->{
 						oauth.loginPage("/login/google");
 						oauth.authorizationEndpoint(authorization->
