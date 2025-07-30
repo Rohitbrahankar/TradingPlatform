@@ -96,13 +96,20 @@ public class AppConfig {
 	            @Override
 	            public CorsConfiguration getCorsConfiguration(HttpServletRequest request) {
 	                CorsConfiguration cfg = new CorsConfiguration();
-	                cfg.setAllowedOrigins(Arrays.asList(
-	                    "http://localhost:3000",
-	                    "http://localhost:5173",
-						"http://localhost:5174",
-	                    "http://localhost:4200",
-							Constants.FrontendURL
-	                ));
+	     //            cfg.setAllowedOrigins(Arrays.asList(
+	     //                "http://localhost:3000",
+	     //                "http://localhost:5173",
+						// "http://localhost:5174",
+	     //                "http://localhost:4200",
+						// 	Constants.FrontendURL
+	     //            ));
+
+			    cfg.setAllowedOrigins(Arrays.asList(
+  "http://localhost:3000",
+  "http://localhost:5173",
+  "https://tradingplatform-ct4o.onrender.com"
+));
+
 	                cfg.setAllowedMethods(Collections.singletonList("*"));
 	                cfg.setAllowCredentials(true);
 	                cfg.setAllowedHeaders(Collections.singletonList("*"));
