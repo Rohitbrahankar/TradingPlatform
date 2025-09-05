@@ -13,7 +13,7 @@ Built with:
 ***8
 ## 🚀 Live Demo*
 
-*🎬 [Watch the video demo](https://github.com/Rohitbrahankar/TradingPlatform/blob/master/treding_demo.mp4)  *
+*🎬 [Watch the video demo](https://youtu.be/1zxI75Fjc3c)  *
 
 *****
 ---
